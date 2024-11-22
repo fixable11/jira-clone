@@ -11,6 +11,9 @@ import Link from 'next/link';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { signUpWithGithub, signUpWithGoogle } from '@/lib/oauth';
 
+import { loginSchema } from '../schemas';
+import { useLogin } from '../api/use-login';
+
 export const SignInCard = () => {
   const { mutate, isPending } = useLogin();
 

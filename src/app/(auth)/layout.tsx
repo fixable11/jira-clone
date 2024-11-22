@@ -2,14 +2,15 @@ import { ReactNode } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { usePathname } from 'next/navigation';
 
 interface AuthLayoutProps {
   children: ReactNode;
 }
 
 const AuthLayout = ({ children }: AuthLayoutProps) => {
-  //  const pathname = usePathname();
-  const isSignIn = true;
+  const pathname = usePathname();
+  const isSignIn = pathname === '/sign-in';
 
   return (
     <html>
