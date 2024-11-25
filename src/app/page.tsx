@@ -2,12 +2,14 @@
 
 import { useCurrent } from '@/features/auth/api/use-current';
 import { useEffect } from 'react';
-import { router } from 'next/client';
 import { useLogout } from '@/features/auth/api/use-logout';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
+
 export default function Home() {
   const { data, isLoading } = useCurrent();
   const { mutate } = useLogout();
+  const router = useRouter();
 
   useEffect(() => {
     if (!data && !isLoading) {
