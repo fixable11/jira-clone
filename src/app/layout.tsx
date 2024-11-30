@@ -6,6 +6,7 @@ import { Toaster } from '@/components/ui/sonner';
 
 import './globals.css';
 import { QueryProvider } from '@/components/query-provider';
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn(inter.className, 'antialiased min-h-screen')}>
         <Toaster />
-        <QueryProvider>{children}</QueryProvider>
+
+        <NuqsAdapter>
+          <QueryProvider>{children}</QueryProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );
