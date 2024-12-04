@@ -273,7 +273,7 @@ export const EditWorkspaceForm = ({ onCancel, initialValues }: EditWorkspaceForm
         </CardContent>
       </Card>
 
-      <Card className="w-ful h-full border-none shadow-none">
+      <Card className="w-full h-full border-none shadow-none">
         <CardContent className="p-7">
           <div className="flex flex-col">
             <h3 className="font-bold">Danger Zone</h3>
