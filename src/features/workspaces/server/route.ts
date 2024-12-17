@@ -53,8 +53,9 @@ const app = new Hono()
       name,
       userId: user.$id,
       imageUrl: uploadedImageUrl,
-      inviteCode: generateInviteCode(6)
+      userInvite: generateInviteCode(6)
     });
+    console.log({ userId: user.$id, workspaceId: workspace.$id, role: MemberRole.ADMIN });
 
     await databases.createDocument(DATABASE_ID, MEMBERS_ID, ID.unique(), {
       userId: user.$id,
@@ -103,7 +104,7 @@ const app = new Hono()
     }
 
     const workspace = await databases.updateDocument(DATABASE_ID, WORKSPACES_ID, workspaceId, {
-      inviteCode: generateInviteCode(6)
+      userInvite: generateInviteCode(6)
     });
 
     return c.json({ data: workspace });
