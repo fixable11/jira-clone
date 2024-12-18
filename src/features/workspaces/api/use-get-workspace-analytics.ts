@@ -19,6 +19,7 @@ export const useGetWorkspaceAnalytics = ({ workspaceId }: UseGetWorkspaceAnalyti
       const response = await client.api.workspaces[':workspaceId']['analytics'].$get({
         param: { workspaceId }
       });
+      console.log('response', response);
 
       if (!response.ok) {
         throw new Error('Failed to fetch workspace analytics');
